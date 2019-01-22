@@ -7,6 +7,12 @@ function handleSubmit(event){
   const data = new FormData($form);
   const title = data.get('title');
   console.log(title);
+  store.dispatch({
+    type: 'ADD_SONG',
+    payload:{
+      title
+    }
+  })
 }
 
 const initialState = [
@@ -35,7 +41,7 @@ playlist.forEach((item) => {
   template.textContent = item.title;
   $container.appendChild(template);
 })
-
+ 
 console.log(store.getState());
 
 //https://github.com/zalmoxisus/redux-devtools-extension
