@@ -28,4 +28,14 @@ const store = createStore(
   && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
+const $container = document.getElementById('playlist');
+const playlist = store.getState();
+playlist.forEach((item) => {
+  const template = document.createElement('p');
+  template.textContent = item.title;
+  $container.appendChild(template);
+})
+
+console.log(store.getState());
+
 //https://github.com/zalmoxisus/redux-devtools-extension
