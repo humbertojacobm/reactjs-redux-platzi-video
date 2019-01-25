@@ -6,6 +6,7 @@ import data from '../api.json';
 // console.log('Hola mundo!' )
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import reducer from '../reducers/data';
 
 const initialState = {
   data: {
@@ -14,7 +15,7 @@ const initialState = {
 }
 
 const store = createStore(
-  (state) => state,
+  reducer,
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ 
   && window.__REDUX_DEVTOOLS_EXTENSION__()
