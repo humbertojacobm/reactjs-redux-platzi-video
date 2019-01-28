@@ -7,8 +7,8 @@ function data(state,action){
       {
         state.data.categories.forEach((cat) => {
           const results = cat.playlist.filter((item) => {
-                            return item.author.includes(
-                               action.payload.query);
+                            return item.author.toUpperCase().includes(
+                               action.payload.query.toUpperCase());
                           });        
           if(results.length)
             mediaItems.push(...results)
