@@ -7,8 +7,7 @@ class SearchContainer extends Component {
     value: 'Luis Fonsi'
   }
   handleSubmit = event => {
-    event.preventDefault();
-    console.log(this.input.value, 'submit');
+    event.preventDefault();    
     this.props.dispatch({
       type: 'SEARCH_VIDEO',
       payload: {
