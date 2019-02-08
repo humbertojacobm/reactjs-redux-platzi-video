@@ -1,4 +1,5 @@
 import {SEARCH_ENTITIES, 
+        SEARCH_ASYNC_ENTITIES,
         CLOSE_MODAL, 
         OPEN_MODAL} from '../action-types/index';
 
@@ -23,5 +24,16 @@ export function searchEntities(query) {
     payload: {
       query,
     }
+  }
+}
+
+export function searchAsyncEntities(query) {
+  return (dispatch) => {
+    // fetch()
+    // XHR
+    // trae
+    setTimeout(()=> {
+      dispatch(searchEntities(query));
+    }, 5000);    
   }
 }

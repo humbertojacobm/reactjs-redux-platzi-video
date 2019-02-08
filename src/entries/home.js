@@ -9,6 +9,7 @@ import { Map as map } from 'immutable';
 //https://github.com/LogRocket/redux-logger
 //https://github.com/zalmoxisus/redux-devtools-extension
 import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
@@ -38,7 +39,7 @@ const store = createStore(
   composeWithDevTools(
     applyMiddleware(
       logger,
-      logger_
+      thunk
     )
   ),
 )
